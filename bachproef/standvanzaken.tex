@@ -1,18 +1,95 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
 \label{ch:stand-van-zaken}
 
-% Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
-% dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
-% bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
+\section{Inleiding}
 
-% Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
+In de hedendaagse wereld staat energiebeheer centraal in de strategische planning van zowel overheden als private sectoren. Dit komt voornamelijk door de toenemende wereldbevolking, industrialisatie en de urgentie van klimaatverandering, die allemaal bijdragen aan de complexiteit van energievoorziening en -consumptie. De International Energy Agency (IEA) rapporteert dat de wereldwijde energievraag naar verwachting met meer dan 25\% zal toenemen tegen 2040, tenzij er effectieve beleidsmaatregelen worden geïmplementeerd \autocite{Reddy_2023}.
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+Deze groeiende vraag naar energie gaat hand in hand met de noodzaak om de energie-efficiëntie te verhogen en de milieu-impact van energieproductie en -consumptie te verminderen. Technologieën zoals machine learning (ML) en deep learning (DL) bieden nieuwe perspectieven voor het voorspellen van energieverbruik, wat cruciaal is voor het optimaliseren van het energiebeheer en het minimaliseren van verspilling. Voorspellingsmodellen die gebaseerd zijn op deze technologieën kunnen helpen bij het nauwkeurig inschatten van energiebehoeften, waardoor overheden en bedrijven beter geïnformeerde beslissingen kunnen nemen over energieproductie, distributie en consumptie.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+Machine learning en deep learning zijn bijzonder effectief in het modelleren van complexe, dynamische systemen waar traditionele statistische methoden tekortschieten. Deze methoden zijn in staat om grote hoeveelheden historische en real-time data te verwerken om patronen te identificeren die niet direct waarneembaar zijn. Het gebruik van deze geavanceerde analytische technieken in energievoorspellingsmodellen maakt een meer geïntegreerde en adaptieve benadering van energiebeheer mogelijk, wat van cruciaal belang is in een tijdperk waarin energiebronnen steeds meer onder druk staan.
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+Echter, de implementatie van ML en DL in energievoorspelling is niet zonder uitdagingen. Deze technologieën vereisen grote hoeveelheden data van goede kwaliteit, geavanceerde algoritmen voor gegevensverwerking en -analyse, en aanzienlijke rekenkracht. Daarnaast is de interpretatie van de resultaten van ML- en DL-modellen vaak complex en vereist het diepgaande technische kennis, wat een belemmering kan vormen voor organisaties zonder gespecialiseerde expertise.
 
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+Ondanks deze uitdagingen bieden de potentiële voordelen van het toepassen van machine learning en deep learning in energievoorspelling aanzienlijke kansen voor zowel de publieke als de private sector. Door energieverbruik nauwkeuriger te voorspellen, kunnen organisaties niet alleen hun operationele efficiëntie verbeteren, maar ook bijdragen aan duurzamere energiepraktijken die essentieel zijn voor het milieu.
 
-\lipsum[7-20]
+In de volgende secties zullen we dieper ingaan op specifieke ML- en DL-technieken die worden gebruikt voor energievoorspelling, inclusief hun toepassingen, prestaties en de uitdagingen die met hun implementatie gepaard gaan.
+
+\section{Machine Learning Technieken voor Energievoorspelling}
+
+\subsection{Overzicht van Machine Learning Technieken}
+Machine learning technieken hebben een breed scala aan toepassingen in energievoorspelling. Deze technieken omvatten regressieanalyses, beslisbomen, support vector machines (SVM), en neurale netwerken, elk met zijn eigen sterktes afhankelijk van de aard en complexiteit van de voorspellingsopdracht.
+
+\begin{enumerate}
+    \item Regressieanalyse en Tijdreeksmodellen: Zoals uiteengezet in de studies door \textcite{Reddy_2023}, worden regressieanalyses vaak gebruikt voor het voorspellen van energieverbruik op basis van historische data. Dit paper illustreert de toepassing van meerdere regressiemodellen om energieverbruik te voorspellen met een hoge mate van nauwkeurigheid, waarbij tijdreeksanalyses worden benut om seizoensgebonden trends in elektriciteitsvraag te modelleren.
+    \item Beslisbomen en Random Forests: Random Forest algoritmen worden breed toegepast in de energievoorspelling, zoals besproken door \textcite{Reddy_2023}. Deze algoritmen zijn bijzonder nuttig vanwege hun vermogen om grote datasets te hanteren en complexe beslissingsbomen op te bouwen die helpen bij het classificeren en voorspellen van energieverbruikspatronen.
+    \item Support Vector Machines (SVM): SVMs worden gebruikt voor zowel classificatie als regressie in energievoorspellingsscenario's. De studie door \textcite{Reddy_2023} toont aan hoe SVM ingezet kan worden om niet-lineaire relaties efficiënt te modelleren en complexe patronen in energiegegevens te identificeren, wat essentieel is voor het nauwkeurig voorspellen van piekvraag en -verbruik.
+    \item Neurale Netwerken: De toepassing van geavanceerde neurale netwerken, zoals gedemonstreerd in \textcite{Alanbar_2020}, benadrukt de kracht van diepe leerarchitecturen zoals Long Short-Term Memory (LSTM) netwerken voor het voorspellen van energieverbruik in educatieve gebouwen. Deze technieken zijn bijzonder waardevol vanwege hun vermogen om lange termijn afhankelijkheden in tijdreeksdata vast te leggen.
+\end{enumerate}
+
+\subsection{Toepassing van ML-technieken in Energievoorspelling}
+In de praktijk zijn deze machine learning technieken cruciaal voor het ontwikkelen van energiebeheersystemen die realtime data kunnen analyseren en voorspellingen kunnen doen. Het gebruik van ML in de energiesector helpt niet alleen bij het voorspellen van de vraag en het aanbod om de efficiëntie te verhogen, maar ook bij het identificeren van anomalieën in energieverbruik, wat cruciaal is voor het onderhouden van de netwerkintegriteit en het verminderen van verliezen.
+
+De door \textcite{Reddy_2023} gepresenteerde case studies illustreren hoe machine learning kan worden ingezet om de operationele efficiëntie te verbeteren en energiekosten te verlagen door nauwkeurigere voorspellingen van energiebehoeften, wat cruciaal is voor de planning en operatie van moderne energienetwerken.
+
+\section{Deep Learning voor Geavanceerde Energievoorspelling}
+
+Deep learning, een geavanceerde vorm van machine learning, speelt een steeds grotere rol in de voorspelling van energieverbruik door zijn vermogen om complexe patronen en relaties in grote datasets te herkennen. Deze sectie onderzoekt hoe deep learning technieken, met name neurale netwerken zoals LSTM, worden toegepast voor nauwkeurige energievoorspellingen.
+
+\subsection{Long Short-Term Memory Netwerken (LSTM)}
+LSTM-netwerken zijn een type recurrent neural network (RNN) speciaal ontworpen om het probleem van het verdwijnen van de gradient, een veelvoorkomend probleem bij standaard RNNs, op te lossen. Door hun architectuur zijn LSTMs in staat om informatie voor lange perioden te behouden, wat ze ideaal maakt voor tijdreeksvoorspelling zoals het voorspellen van energieverbruik.
+
+In een studie uitgevoerd aan de Qassim Universiteit, zoals beschreven door \textcite{Alanbar_2020}, werd LSTM gebruikt om het energieverbruik in een onderwijsinstelling te voorspellen. Deze studie toonde aan dat het LSTM-model een lage Root Mean Square Error (RMSE) bereikte, wat wijst op een hoge nauwkeurigheid vergeleken met relatieve studies. Deze resultaten benadrukken het potentieel van LSTM-netwerken voor het verbeteren van de voorspellingsnauwkeurigheid in real-time energiemanagementsystemen.
+
+\subsection{Toepassingen van Deep Learning in Energievoorspelling}
+Deep learning wordt niet alleen gebruikt voor het voorspellen van het energieverbruik maar ook voor het optimaliseren van energieproductie en -distributieprocessen. In de energiesector kunnen deep learning modellen bijvoorbeeld worden gebruikt om vraagresponsstrategieën te optimaliseren, waarbij de voorspelde energievraag wordt gebruikt om de energieproductie dynamisch aan te passen om efficiëntie te verhogen en kosten te verlagen.
+
+Verder is deep learning bijzonder effectief in het identificeren van niet-lineaire relaties en patronen die moeilijk te detecteren zijn met traditionele statistische methoden. Dit maakt het een krachtig hulpmiddel voor scenario's waar complexe variabelen zoals weerpatronen, economische activiteiten en gebruikersgedrag het energieverbruik beïnvloeden.
+
+\subsection{Uitdagingen en Overwegingen}
+
+Hoewel deep learning aanzienlijke voordelen biedt, zijn er ook uitdagingen zoals de noodzaak van grote hoeveelheden gelabelde trainingsdata, hoge computationele vereisten en de complexiteit van modelafstemming en -validatie. Deze uitdagingen vereisen aanzienlijke resources en expertise, wat kan leiden tot beperkingen in de toepasbaarheid, vooral in kleinere organisaties of in ontwikkelingslanden waar toegang tot dergelijke resources beperkt kan zijn.
+
+De case study door \textcite{Alanbar_2020} biedt een praktijkvoorbeeld van hoe deze uitdagingen kunnen worden aangepakt en hoe deep learning succesvol kan worden geïmplementeerd voor energievoorspelling in een academische setting. Echter, het is belangrijk om te erkennen dat er verschillen zijn tussen academische en industriële settings. In een academische omgeving zijn de doelen vaak gericht op onderzoek en innovatie met toegang tot gespecialiseerde kennis en middelen, terwijl industriële toepassingen vaak gericht zijn op praktische en schaalbare oplossingen binnen striktere budgetten en tijdslijnen.
+
+Het parallel trekken van deze settings kan risico’s met zich meebrengen, zoals het overschatten van de beschikbare middelen en expertise in een industriële omgeving, of het onderschatten van de noodzaak voor rigoureuze validatie en schaalbaarheid van oplossingen. Het is daarom cruciaal om de contextuele verschillen in overweging te nemen bij het extrapoleren van bevindingen uit academische studies naar industriële toepassingen.
+
+\section{Uitdagingen en Toekomstige Richtingen}
+
+\subsection{Uitdagingen bij het Implementeren van ML en DL in Energievoorspelling}
+Het toepassen van machine learning (ML) en deep learning (DL) technologieën op het gebied van energievoorspelling brengt verschillende technische en operationele uitdagingen met zich mee. Deze uitdagingen moeten worden aangepakt om de betrouwbaarheid en effectiviteit van voorspellingsmodellen te garanderen.
+
+\begin{enumerate}
+    \item Datakwaliteit en -volume: Zoals benadrukt in de studie van \textcite{Alanbar_2020}, vereisen ML en DL modellen grote hoeveelheden hoogwaardige data om nauwkeurige voorspellingen te genereren. Het verzamelen van voldoende data van hoge kwaliteit blijft een uitdaging, vooral in sectoren waar dataverzameling niet systematisch is geïntegreerd in de operationele processen.
+    \item Modelcomplexiteit en interpretatie: De complexiteit van ML en DL modellen kan leiden tot moeilijkheden bij de interpretatie van de resultaten. Dit wordt verder gecompliceerd door het 'black box'-karakter van vele deep learning modellen, waarbij het niet altijd duidelijk is hoe beslissingen worden genomen. Deze kwestie van modeltransparantie is cruciaal, vooral in sectoren zoals de energievoorziening waar betrouwbaarheid en vertrouwen van groot belang zijn.
+    \item Rekenintensiteit: De training van geavanceerde DL modellen vereist aanzienlijke rekenkracht, wat kan resulteren in hoge kosten en energieverbruik op zich. Dit aspect werd duidelijk in de toepassing van LSTM-netwerken voor energievoorspelling in de case study gepresenteerd door \textcite{Alanbar_2020}, waarbij aanzienlijke computationele middelen nodig waren voor het verwerken van de data.
+\end{enumerate}
+
+\subsection{Toekomstige Richtingen in Energievoorspelling}
+Gezien de snelle ontwikkelingen op het gebied van ML en DL en de toenemende beschikbaarheid van data, zijn er veelbelovende richtingen voor toekomstig onderzoek en implementatie in energievoorspelling.
+
+\begin{enumerate}
+    \item Verbetering van de toegankelijkheid van technologie: Het ontwikkelen van meer gebruikersvriendelijke ML- en DL-tools die minder technische expertise vereisen, kan helpen om deze technologieën toegankelijker te maken voor een breder publiek. Dit zou de adoptie van geavanceerde voorspellingsmodellen in minder technisch georiënteerde industrieën kunnen versnellen.
+    \item Integratie met IoT-apparaten: De integratie van ML en DL modellen met Internet of Things (IoT) apparaten in slimme netwerken biedt een veelbelovend pad voor real-time energiemanagement en -optimalisatie. Dit zou leiden tot meer gedecentraliseerde en efficiënte energiebeheersystemen.
+    \item Focus op duurzaamheid: Verder onderzoek naar hoe ML en DL kunnen bijdragen aan duurzamere energiepraktijken is essentieel. Dit omvat het optimaliseren van het energieverbruik en het verminderen van de ecologische voetafdruk van energieproductie en -consumptie.
+\end{enumerate}
+
+\section{Conclusie}
+
+De toepassing van machine learning (ML) en deep learning (DL) technologieën in de voorspelling van energieverbruik biedt aanzienlijke mogelijkheden voor de energie-industrie. Deze technieken bieden geavanceerde analytische mogelijkheden die traditionele modellen niet kunnen bieden, zoals het vermogen om complexe, niet-lineaire patronen en relaties binnen grote datasets te identificeren en te modelleren.
+
+Hoewel de voordelen voor de energie-industrie duidelijk zijn, zijn er ook parallellen te trekken naar de bredere industriële sector. Zowel in de energie- als de industriële sector kan het gebruik van ML en DL leiden tot verbeterde operationele efficiëntie, nauwkeurigere voorspellingen en geoptimaliseerde resource-allocatie. Bijvoorbeeld, in de productie-industrie kunnen deze technologieën worden ingezet voor voorspellend onderhoud, kwaliteitscontrole en supply chain optimalisatie, net zoals ze in de energie-industrie worden gebruikt voor vraagvoorspelling en optimalisatie van energieverbruik.
+
+Echter, er zijn ook belangrijke verschillen om rekening mee te houden. De specifieke uitdagingen en vereisten van een industriële omgeving, zoals de variëteit aan processen en machines, kunnen verschillen van die in de energie-industr
+
+\subsection{Samenvatting van Kernpunten}
+\begin{enumerate}
+    \item Verbeterde nauwkeurigheid van voorspellingen: Zoals gedemonstreerd in de studies van \textcite{Alanbar_2020}, maken ML- en DL-technieken, met name LSTM-netwerken, het mogelijk om met hoge nauwkeurigheid energieverbruik te voorspellen, wat essentieel is voor het efficiënt beheren van energiebronnen en het verminderen van operationele kosten.
+    \item Uitdagingen en barrières: Ondanks hun potentieel, komen de implementatie en exploitatie van ML- en DL-modellen met uitdagingen, waaronder de noodzaak voor grote hoeveelheden kwalitatieve data, hoge computationele eisen, en de complexiteit van modelinterpretatie en -validatie.
+    \item Toekomstige richtingen: De voortdurende ontwikkeling van technologieën en methoden voor het verbeteren van de toegankelijkheid en duurzaamheid van ML- en DL-toepassingen zal cruciaal zijn. Dit omvat onderzoek naar hoe deze technieken geïntegreerd kunnen worden met opkomende technologieën zoals IoT voor real-time monitoring en controle, en hoe ze kunnen bijdragen aan duurzamere energiepraktijken.
+\end{enumerate}
+
+\subsection{Implicaties voor de Energiesector}
+De toepassing van ML en DL in energievoorspelling heeft niet alleen de potentie om de operationele efficiëntie te verbeteren, maar biedt ook kansen voor het bevorderen van duurzame energie-initiatieven. Door een beter begrip van verbruikspatronen kunnen energiebedrijven beter reageren op de vraag, hun productie optimaliseren, en tegelijkertijd hun ecologische voetafdruk verminderen.
+
+Bovendien, zoals de resultaten van de door \textcite{Alanbar_2020} uitgevoerde studie aantonen, kan de implementatie van deze technologieën helpen bij het ontwikkelen van meer geavanceerde voorspellingsmodellen die niet alleen economische voordelen bieden maar ook bijdragen aan het behoud van energie en het verlagen van emissies.

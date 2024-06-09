@@ -337,7 +337,7 @@
         not running XeLaTeX/LuaLaTeX: using native fonts}
 
     \RequirePackage[defaultfam,tabular,lining]{montserrat}
-    \RequirePackage{firamath}
+   
     \RequirePackage{sfmath} % Fallback sans serif math font
 
     \RequirePackage[T1]{fontenc}

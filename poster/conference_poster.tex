@@ -9,21 +9,21 @@
 % Info over de opleiding
 \course{Bachelorproef}
 \studyprogramme{toegepaste informatica}
-\academicyear{2022-2023}
+\academicyear{2023-2024}
 \institution{Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent}
 
 % Info over de bachelorproef
-\title{Titel van uw bachelorproef}
-\subtitle{Ondertitel (eventueel)}
-\author{Voornaam Naam}
-\email{voornaam.familienaam@student.hogent.be}
-\supervisor{Voornaam Naam}
-\cosupervisor{Voornaam Naam (Bedrijf)}
+\title{Slimme Energiemodellen in de Warmwalserij bij ArcelorMittal}
+\subtitle{}
+\author{Quintin Mintiens}
+\email{quintin.mintiens@student.hogent.be}
+\supervisor{Mevr. G. Vercauteren}
+\cosupervisor{Dhr. T. De Raad, Dhr. A. Vande Ghinste (ArcelorMittal)}
 
 % Indien ingevuld, wordt deze informatie toegevoegd aan het einde van de
 % abstract. Zet in commentaar als je dit niet wilt.
-\specialisation{Systeem- en Netwerkbeheer}
-\keywords{Lambda-calculus, Scheme}
+\specialisation{Data Science}
+\keywords{energievoorspelling, anomaly detection, machine learning, LSTM}
 \projectrepo{https://github.com/user/repo}
 
 \begin{document}
@@ -31,56 +31,43 @@
 \maketitle
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+Deze bachelorproef richt zich op het ontwikkelen van slimme energiemodellen voor het detecteren van anomalieën in het energieverbruik van ovens in de warmwalserij van ArcelorMittal. Verschillende machine learning-modellen, met name Long Short-Term Memory (LSTM) netwerken, werden ontwikkeld en geëvalueerd. Het onderzoek toont aan dat LSTM-netwerken effectief zijn in het voorspellen van energieverbruik en het detecteren van afwijkingen, wat bijdraagt aan een efficiënter energiebeheer en kostenbesparing.
 \end{abstract}
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
 \section{Introductie}
 
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
+De warmwalserij bij ArcelorMittal verbruikt aanzienlijke hoeveelheden energie. Efficiënt energiebeheer is cruciaal om operationele kosten te verlagen en duurzaamheid te bevorderen. Dit onderzoek richt zich op het ontwikkelen van een model dat energieverbruik nauwkeurig kan voorspellen en anomalieën kan detecteren.
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say `Ni' again to you, if you do not appease us.
+\section{Methodologie}
 
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
+\subsection{Data Verzameling en Verwerking}
+Data werd verzameld uit de operationele databases van ArcelorMittal, inclusief kenmerken zoals datum, gemiddelde breedte en dikte van de slabs, energieverbruik van de ovens, en het totale gewicht van de geproduceerde slabs. Deze data werd genormaliseerd voor uniformiteit.
 
-You can't expect to wield supreme power just `cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+\subsection{Feature Engineering}
+Belangrijke kenmerken zoals productietijd, gemiddelde dikte en breedte van de slabs, en het gewicht van de slabs werden geselecteerd en getransformeerd om de voorspellingskracht van het model te optimaliseren.
 
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+\subsection{Modelselectie en Training}
+Een Long Short-Term Memory (LSTM) netwerk werd geselecteerd vanwege zijn vermogen om lange termijn afhankelijkheden in tijdreeksdata te leren. Het model werd getraind met een sequence length van 64 tijdstappen, de Adam optimizer, en de Mean Squared Error (MSE) loss functie.
 
-\section{Experimenten}
+\section{Resultaten}
 
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
-
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
-
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
-
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
-
-\section{Sectie met figuur}
-
-De {\LaTeX} figure-omgeving bepaalt zelf waar een afbeelding komt en dat is meestal niet op de plek in de tekst waar de figure-omgeving gedefinieerd wordt. Als je wilt forceren dat afbeeldingen toch in de flow van de tekst blijven, dan kan je dat zoals hieronder:
+Het LSTM-model toonde de beste prestaties in het voorspellen van energieverbruik, met een validation loss van 0.023. Dit suggereert een hoge nauwkeurigheid in het identificeren van patronen in energieverbruiksdata en het voorspellen van anomalieën.
 
 \begin{center}
   \captionsetup{type=figure}
-  \includegraphics[width=1.0\linewidth]{grail}
-  \captionof{figure}{He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say `Ni' again to you, if you do not appease us}
+  \includegraphics[width=1.0\linewidth]{./graphics/model_performance.png} 
+  \captionof{figure}{Modelprestaties: effectief verbruik versus voorspeld verbruik voor alle ovens}
 \end{center}
-
-Let er wel op dat dit tot problemen met bladschikking kan leiden.
 
 \section{Conclusies}
 
-Don't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+Het onderzoek bevestigt dat LSTM-netwerken effectief zijn voor het voorspellen van energieverbruik en het detecteren van anomalieën in industriële processen. Dit leidt tot verbeterd energiebeheer, lagere kosten, en ondersteuning van duurzaamheidsinitiatieven bij ArcelorMittal.
 
-\section{Toekomstig onderzoek}
+\section{Toekomstig Onderzoek}
 
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
+Toekomstig onderzoek kan zich richten op verdere optimalisatie van het model, uitbreiding naar andere industriële processen, en integratie van real-time data voor nog nauwkeurigere voorspellingen en efficiënter energiebeheer.
 
 \end{multicols}
 \end{document}

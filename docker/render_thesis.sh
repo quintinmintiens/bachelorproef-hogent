@@ -29,4 +29,19 @@ for latex_file in ${source_files}; do
     -xelatex \
     "${latex_file}"
   set +x
+
+  # Run biber to process bibliography
+  biber "${output_dir}/$(basename "${latex_file}" .tex)"
+  
+  set -x
+  # Run latexmk again to ensure all references are updated
+  latexmk \
+    -file-line-error \
+    -interaction=nonstopmode \
+    -output-directory="${output_dir}" \
+    -shell-escape \
+    -synctex=1 \
+    -xelatex \
+    "${latex_file}"
+  set +x
 done
